@@ -1,31 +1,23 @@
 <template>
-  <q-card class="flex flex-center my-card">
-    <div class="q-pa-md" style="max-width: 600px">
-      <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
-        <q-input
-          filled
-          v-model="name"
-          label="Username *"
-          lazy-rules
-          :rules="[(val) => (val && val.length > 0) || 'Please type something']"
-        />
+  <div class="row items-stretch">
+    <div class="col-6 q-pa-md">
+      <q-card class="full-height q-pa-md">
+        <q-form class="q-gutter-md">
+          <q-input filled label="Username *" />
 
-        <q-input
-          filled
-          type="password"
-          v-model="password"
-          label="Password *"
-          lazy-rules
-          :rules="[
-            (val) => (val !== null && val !== '') || 'Please type your age',
-            (val) => (val > 0 && val < 100) || 'Please type a real age',
-          ]"
-        />
+          <q-input filled type="password" label="Password *" />
 
-        <div>
-          <q-btn label="Submit" type="submit" color="primary" />
-        </div>
-      </q-form>
+          <div>
+            <q-btn label="Submit" type="submit" color="primary" />
+          </div>
+        </q-form>
+      </q-card>
     </div>
-  </q-card>
+
+    <div class="col-6 q-pa-md">
+      <q-card class="full-height">
+        <q-img src="https://picsum.photos/500/300" class="full-height" />
+      </q-card>
+    </div>
+  </div>
 </template>
